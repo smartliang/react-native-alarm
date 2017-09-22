@@ -9,8 +9,8 @@
  "keywords": [
    "react-native"
  ],
- "author": "",
- "license": "",
+ "author": "gbliang@outlook.com",
+ "license": "MIT",
  "peerDependencies": {
    "react-native": "^0.41.2"
  }
