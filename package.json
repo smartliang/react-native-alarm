@@ -11,6 +11,10 @@
  ],
  "author": "gbliang@outlook.com",
  "license": "MIT",
+ "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartliang/react-native-alarm.git"
+  },
  "peerDependencies": {
    "react-native": "^0.41.2"
  }
