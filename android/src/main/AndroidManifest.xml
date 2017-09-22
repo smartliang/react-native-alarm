@@ -1,6 +1,13 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.liang">
+    package="com.liang">
+
+    <application>
+        <receiver android:name=".RNALarmCeiver">
+            <intent-filter>
+                <action android:name="REACT_NATIVE_ALARM"/>
+            </intent-filter>
+        </receiver>
+    </application>
 
 </manifest>
-  
