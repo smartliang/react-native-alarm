@@ -45,7 +45,7 @@ public class RNAlarmModule extends ReactContextBaseJavaModule {
 
             long startTime = Long.parseLong(triggerTime);
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, startTime, pendingIntent);
-            if(successCallback. != null) {
+            if(successCallback != null) {
                 successCallback.invoke();
             }
 
@@ -65,7 +65,7 @@ public class RNAlarmModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void setAlarm(String triggerTime, String title, Promise promise, @Nullable String musicUri) {
+    public void setAlarm(String triggerTime, String title, @Nullable String musicUri, Promise promise) {
         try {
             AlarmManager alarmManager = (AlarmManager) reactContext.getSystemService(Context.ALARM_SERVICE);
             Intent intent = new Intent(RNAlarmConstants.REACT_NATIVE_ALARM);
