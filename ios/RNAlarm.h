@@ -4,8 +4,9 @@
 #else
 #import <React/RCTBridgeModule.h>
 #endif
+@import UserNotifications;
 
-@interface RNAlarm : NSObject <RCTBridgeModule>
+@interface RNAlarm : NSObject <RCTBridgeModule, UNUserNotificationCenterDelegate>
 
 @end
   
