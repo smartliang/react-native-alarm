@@ -40,6 +40,15 @@
 import RNAlarm from 'react-native-alarm';
 
 // TODO: What to do with the module?
-RNAlarm;
+RNAlarm.setAlarm('Meeting',
+        'Meeting with customer',
+        '', 
+        '',
+     () => {
+       // Success callback function
+     },
+     () => {
+     	// Fail callback function
+     });
 ```
   
