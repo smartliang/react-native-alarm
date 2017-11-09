@@ -1,6 +1,6 @@
 {
  "name": "react-native-alarm",
- "version": "1.0.6",
+ "version": "1.1.9",
  "description": "",
  "main": "index.js",
  "scripts": {
@@ -13,9 +13,9 @@
  "license": "MIT",
  "repository": {
     "type": "git",
-    "url": "git+https://github.com/xgfe/react-native-datepicker.git"
+    "url": "git+https://github.com/smartliang/react-native-alarm.git"
   },
  "peerDependencies": {
-   "react-native": "^0.41.2"
+   "react-native": "^0.47.0"
  }
 }
