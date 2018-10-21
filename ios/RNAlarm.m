@@ -93,6 +93,8 @@ RCT_EXPORT_METHOD(clearAlarm){
         [userDefault removeObjectForKey:key];
     }
     [userDefault synchronize];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 
