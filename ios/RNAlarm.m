@@ -93,6 +93,8 @@ RCT_EXPORT_METHOD(clearAlarm){
         [userDefault removeObjectForKey:key];
     }
     [userDefault synchronize];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 
@@ -207,17 +209,9 @@ RCT_EXPORT_METHOD(setAlarm:(NSString *)triggerTime
             
             //for (int i=0;  i<3; i++) {
             UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:intervalSeconds repeats:NO];
-            UNTimeIntervalNotificationTrigger *trigger1 = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval: intervalSeconds + 60 repeats:NO];
-            UNTimeIntervalNotificationTrigger *trigger2 = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval: intervalSeconds + 120 repeats:NO];
-            
-            
             
             UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier: [triggerTime stringByAppendingString: @"1"] content:content trigger:trigger];
-            UNNotificationRequest *request1 = [UNNotificationRequest requestWithIdentifier:[triggerTime stringByAppendingString: @"2"] content:content trigger:trigger1];
-            UNNotificationRequest *request2 = [UNNotificationRequest requestWithIdentifier:[triggerTime stringByAppendingString: @"3"] content:content trigger:trigger2];
-            
-            
-            
+
             UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
             
             //NSArray *actionOption = [NSArray arrayWithObject:@"actionOption"];
@@ -235,20 +229,6 @@ RCT_EXPORT_METHOD(setAlarm:(NSString *)triggerTime
             
             [center setNotificationCategories: [NSSet setWithObjects:category, nil]];
             [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-                if(error != nil)
-                {
-                    // NSLog(error.localizedDescription);
-                    @throw error;
-                }
-            }];
-            [center addNotificationRequest:request1 withCompletionHandler:^(NSError * _Nullable error) {
-                if(error != nil)
-                {
-                    // NSLog(error.localizedDescription);
-                    @throw error;
-                }
-            }];
-            [center addNotificationRequest:request2 withCompletionHandler:^(NSError * _Nullable error) {
                 if(error != nil)
                 {
                     // NSLog(error.localizedDescription);
