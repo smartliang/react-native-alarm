@@ -17,5 +17,6 @@
   },
  "peerDependencies": {
    "react-native": "^0.47.0"
- }
+ },
+ "types": "index.d.ts"
 }
